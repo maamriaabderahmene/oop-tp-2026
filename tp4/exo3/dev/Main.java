@@ -35,17 +35,30 @@ public class Main {
             int choice = readInt("Choice: ");
 
             switch (choice) {
-                case 1: showPeople(); break;
-                case 2: showItems(); break;
-                case 3: editPerson(); break;
-                case 4: editItem(); break;
-                case 5: staffActions(); break;
-                case 6: specialItemActions(); break;
+                case 1:
+                    showPeople();
+                    break;
+                case 2:
+                    showItems();
+                    break;
+                case 3:
+                    editPerson();
+                    break;
+                case 4:
+                    editItem();
+                    break;
+                case 5:
+                    staffActions();
+                    break;
+                case 6:
+                    specialItemActions();
+                    break;
                 case 0:
                     System.out.println("Goodbye!");
                     running = false;
                     break;
-                default: System.out.println("[!] Invalid option.");
+                default:
+                    System.out.println("[!] Invalid option.");
             }
         }
         scanner.close();
@@ -68,8 +81,12 @@ public class Main {
     static void editPerson() {
         showPeople();
         int idx = readInt("Index to edit (-1 to cancel): ");
-        if (idx == -1) return;
-        if (idx < 0 || idx >= people.size()) { System.out.println("[!] Invalid index."); return; }
+        if (idx == -1)
+            return;
+        if (idx < 0 || idx >= people.size()) {
+            System.out.println("[!] Invalid index.");
+            return;
+        }
 
         Individual p = people.get(idx);
         System.out.println("Editing: " + p);
@@ -85,19 +102,39 @@ public class Main {
         }
         int field = readInt("Field: ");
         switch (field) {
-            case 1: p.setName(readString("New name: ")); break;
-            case 2: p.setId(readString("New ID: ")); break;
-            case 3: p.setEmail(readString("New email: ")); break;
+            case 1:
+                p.setName(readString("New name: "));
+                break;
+            case 2:
+                p.setId(readString("New ID: "));
+                break;
+            case 3:
+                p.setEmail(readString("New email: "));
+                break;
             case 4:
-                if (p instanceof Staff) { ((Staff) p).setDepartment(readString("New dept: ")); break; }
-                System.out.println("[!] Invalid."); return;
+                if (p instanceof Staff) {
+                    ((Staff) p).setDepartment(readString("New dept: "));
+                    break;
+                }
+                System.out.println("[!] Invalid.");
+                return;
             case 5:
-                if (p instanceof Staff) { ((Staff) p).setWorkYears(readInt("New years: ")); break; }
-                System.out.println("[!] Invalid."); return;
+                if (p instanceof Staff) {
+                    ((Staff) p).setWorkYears(readInt("New years: "));
+                    break;
+                }
+                System.out.println("[!] Invalid.");
+                return;
             case 6:
-                if (p instanceof SeniorStaff) { ((SeniorStaff) p).setResponsibilityLevel(readString("New level: ")); break; }
-                System.out.println("[!] Invalid."); return;
-            default: System.out.println("[!] Invalid."); return;
+                if (p instanceof SeniorStaff) {
+                    ((SeniorStaff) p).setResponsibilityLevel(readString("New level: "));
+                    break;
+                }
+                System.out.println("[!] Invalid.");
+                return;
+            default:
+                System.out.println("[!] Invalid.");
+                return;
         }
         System.out.println("Updated: " + p);
     }
@@ -105,8 +142,12 @@ public class Main {
     static void editItem() {
         showItems();
         int idx = readInt("Index to edit (-1 to cancel): ");
-        if (idx == -1) return;
-        if (idx < 0 || idx >= items.size()) { System.out.println("[!] Invalid index."); return; }
+        if (idx == -1)
+            return;
+        if (idx < 0 || idx >= items.size()) {
+            System.out.println("[!] Invalid index.");
+            return;
+        }
 
         Item it = items.get(idx);
         System.out.println("Editing: " + it);
@@ -119,20 +160,33 @@ public class Main {
         }
         int field = readInt("Field: ");
         switch (field) {
-            case 1: it.setTitle(readString("New title: ")); break;
-            case 2: it.setCode(readString("New code: ")); break;
-            case 3: it.setYear(readInt("New year: ")); break;
+            case 1:
+                it.setTitle(readString("New title: "));
+                break;
+            case 2:
+                it.setCode(readString("New code: "));
+                break;
+            case 3:
+                it.setYear(readInt("New year: "));
+                break;
             case 4:
-                if (it instanceof SpecialItem) { ((SpecialItem) it).setCategory(readString("New category: ")); break; }
-                System.out.println("[!] Invalid."); return;
+                if (it instanceof SpecialItem) {
+                    ((SpecialItem) it).setCategory(readString("New category: "));
+                    break;
+                }
+                System.out.println("[!] Invalid.");
+                return;
             case 5:
                 if (it instanceof SpecialItem) {
                     String r = readString("Restricted? (true/false): ");
                     ((SpecialItem) it).setRestricted(r.equalsIgnoreCase("true"));
                     break;
                 }
-                System.out.println("[!] Invalid."); return;
-            default: System.out.println("[!] Invalid."); return;
+                System.out.println("[!] Invalid.");
+                return;
+            default:
+                System.out.println("[!] Invalid.");
+                return;
         }
         System.out.println("Updated: " + it);
     }
@@ -140,8 +194,14 @@ public class Main {
     static void staffActions() {
         showPeople();
         int idx = readInt("Staff index: ");
-        if (idx < 0 || idx >= people.size()) { System.out.println("[!] Invalid."); return; }
-        if (!(people.get(idx) instanceof Staff)) { System.out.println("[!] Not a staff member."); return; }
+        if (idx < 0 || idx >= people.size()) {
+            System.out.println("[!] Invalid.");
+            return;
+        }
+        if (!(people.get(idx) instanceof Staff)) {
+            System.out.println("[!] Not a staff member.");
+            return;
+        }
         Staff s = (Staff) people.get(idx);
         System.out.println("  1. Perform duties");
         System.out.println("  2. Assist users");
@@ -150,36 +210,59 @@ public class Main {
         }
         int action = readInt("Action: ");
         switch (action) {
-            case 1: s.performStaffDuties(); break;
-            case 2: s.assistUsers(); break;
+            case 1:
+                s.performStaffDuties();
+                break;
+            case 2:
+                s.assistUsers();
+                break;
             case 3:
-                if (s instanceof SeniorStaff) { ((SeniorStaff) s).manageSection(); break; }
-                System.out.println("[!] Invalid."); break;
-            default: System.out.println("[!] Invalid.");
+                if (s instanceof SeniorStaff) {
+                    ((SeniorStaff) s).manageSection();
+                    break;
+                }
+                System.out.println("[!] Invalid.");
+                break;
+            default:
+                System.out.println("[!] Invalid.");
         }
     }
 
     static void specialItemActions() {
         showItems();
         int idx = readInt("Special item index: ");
-        if (idx < 0 || idx >= items.size()) { System.out.println("[!] Invalid."); return; }
-        if (!(items.get(idx) instanceof SpecialItem)) { System.out.println("[!] Not a special item."); return; }
+        if (idx < 0 || idx >= items.size()) {
+            System.out.println("[!] Invalid.");
+            return;
+        }
+        if (!(items.get(idx) instanceof SpecialItem)) {
+            System.out.println("[!] Not a special item.");
+            return;
+        }
         SpecialItem sp = (SpecialItem) items.get(idx);
         System.out.println("  1. Show reference");
         System.out.println("  2. Check access");
         int action = readInt("Action: ");
         switch (action) {
-            case 1: sp.showReference(); break;
-            case 2: sp.checkAccess(); break;
-            default: System.out.println("[!] Invalid.");
+            case 1:
+                sp.showReference();
+                break;
+            case 2:
+                sp.checkAccess();
+                break;
+            default:
+                System.out.println("[!] Invalid.");
         }
     }
 
     static int readInt(String prompt) {
         while (true) {
             System.out.print(prompt);
-            try { return Integer.parseInt(scanner.nextLine().trim()); }
-            catch (NumberFormatException e) { System.out.println("[!] Enter a valid integer."); }
+            try {
+                return Integer.parseInt(scanner.nextLine().trim());
+            } catch (NumberFormatException e) {
+                System.out.println("[!] Enter a valid integer.");
+            }
         }
     }
 

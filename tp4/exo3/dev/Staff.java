@@ -10,11 +10,21 @@ public class Staff extends Individual {
         this.workYears = workYears;
     }
 
-    public String getDepartment() { return department; }
-    public void setDepartment(String department) { this.department = department; }
+    public String getDepartment() {
+        return department;
+    }
 
-    public int getWorkYears() { return workYears; }
-    public void setWorkYears(int workYears) { this.workYears = workYears; }
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public int getWorkYears() {
+        return workYears;
+    }
+
+    public void setWorkYears(int workYears) {
+        this.workYears = workYears;
+    }
 
     public void performStaffDuties() {
         System.out.println(getName() + " is performing staff duties in " + department + ".");

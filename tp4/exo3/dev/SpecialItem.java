@@ -10,11 +10,21 @@ public class SpecialItem extends Item {
         this.restricted = restricted;
     }
 
-    public String getCategory() { return category; }
-    public void setCategory(String category) { this.category = category; }
+    public String getCategory() {
+        return category;
+    }
 
-    public boolean isRestricted() { return restricted; }
-    public void setRestricted(boolean restricted) { this.restricted = restricted; }
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public boolean isRestricted() {
+        return restricted;
+    }
+
+    public void setRestricted(boolean restricted) {
+        this.restricted = restricted;
+    }
 
     public void showReference() {
         System.out.println("Reference for: " + getTitle() + " [" + category + "]");

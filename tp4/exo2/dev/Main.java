@@ -27,11 +27,21 @@ public class Main {
             int choice = readInt("Choice: ");
 
             switch (choice) {
-                case 1: showAll(); break;
-                case 2: attack(); break;
-                case 3: specialAttack(); break;
-                case 4: defend(); break;
-                case 5: edit(); break;
+                case 1:
+                    showAll();
+                    break;
+                case 2:
+                    attack();
+                    break;
+                case 3:
+                    specialAttack();
+                    break;
+                case 4:
+                    defend();
+                    break;
+                case 5:
+                    edit();
+                    break;
                 case 0:
                     System.out.println("Goodbye!");
                     running = false;
@@ -101,7 +111,8 @@ public class Main {
     static void edit() {
         showAll();
         int idx = readInt("Index to edit (-1 to cancel): ");
-        if (idx == -1) return;
+        if (idx == -1)
+            return;
         if (!valid(idx)) {
             System.out.println("[!] Invalid index.");
             return;
@@ -117,16 +128,32 @@ public class Main {
         }
         int field = readInt("Field: ");
         switch (field) {
-            case 1: c.setName(readString("New name: ")); break;
-            case 2: c.setHealth(readInt("New health: ")); break;
-            case 3: c.setPower(readInt("New power: ")); break;
+            case 1:
+                c.setName(readString("New name: "));
+                break;
+            case 2:
+                c.setHealth(readInt("New health: "));
+                break;
+            case 3:
+                c.setPower(readInt("New power: "));
+                break;
             case 4:
-                if (c instanceof Warrior) { ((Warrior) c).setArmor(readInt("New armor: ")); break; }
-                System.out.println("[!] Invalid field."); return;
+                if (c instanceof Warrior) {
+                    ((Warrior) c).setArmor(readInt("New armor: "));
+                    break;
+                }
+                System.out.println("[!] Invalid field.");
+                return;
             case 5:
-                if (c instanceof Warrior) { ((Warrior) c).setRageLevel(readInt("New rage: ")); break; }
-                System.out.println("[!] Invalid field."); return;
-            default: System.out.println("[!] Invalid field."); return;
+                if (c instanceof Warrior) {
+                    ((Warrior) c).setRageLevel(readInt("New rage: "));
+                    break;
+                }
+                System.out.println("[!] Invalid field.");
+                return;
+            default:
+                System.out.println("[!] Invalid field.");
+                return;
         }
         System.out.println("Updated: " + c);
     }

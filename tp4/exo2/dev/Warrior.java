@@ -10,11 +10,21 @@ public class Warrior extends GameCharacter {
         this.rageLevel = rageLevel;
     }
 
-    public int getArmor() { return armor; }
-    public void setArmor(int armor) { this.armor = armor; }
+    public int getArmor() {
+        return armor;
+    }
 
-    public int getRageLevel() { return rageLevel; }
-    public void setRageLevel(int rageLevel) { this.rageLevel = rageLevel; }
+    public void setArmor(int armor) {
+        this.armor = armor;
+    }
+
+    public int getRageLevel() {
+        return rageLevel;
+    }
+
+    public void setRageLevel(int rageLevel) {
+        this.rageLevel = rageLevel;
+    }
 
     public void specialAttack(GameCharacter target) {
         int damage = getPower() + rageLevel;
