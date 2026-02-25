@@ -1,4 +1,4 @@
-package tp4.exo1;
+package tp4.exo1.simple;
 
 public class Main {
     public static void main(String[] args) {

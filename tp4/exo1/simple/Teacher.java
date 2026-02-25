@@ -1,4 +1,4 @@
-package tp4.exo1.dev;
+package tp4.exo1.simple;
 
 public class Teacher extends Person {
     private String subject;
@@ -10,11 +10,21 @@ public class Teacher extends Person {
         this.experience = experience;
     }
 
-    public String getSubject() { return subject; }
-    public void setSubject(String subject) { this.subject = subject; }
+    public String getSubject() {
+        return subject;
+    }
 
-    public int getExperience() { return experience; }
-    public void setExperience(int experience) { this.experience = experience; }
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
 
     public void teach() {
         System.out.println(getName() + " is teaching " + subject + ".");
@@ -26,7 +36,7 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "Teacher  | Name: " + getName() + " | Age: " + getAge() + " | Email: " + getEmail()
-                + " | Subject: " + subject + " | Experience: " + experience + " yrs";
+        return "Teacher [name=" + getName() + ", age=" + getAge() + ", email=" + getEmail()
+                + ", subject=" + subject + ", experience=" + experience + " years]";
     }
 }

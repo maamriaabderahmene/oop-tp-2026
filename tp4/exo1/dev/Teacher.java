@@ -1,4 +1,4 @@
-package tp4.exo1;
+package tp4.exo1.dev;
 
 public class Teacher extends Person {
     private String subject;
@@ -36,7 +36,7 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "Teacher [name=" + getName() + ", age=" + getAge() + ", email=" + getEmail()
-                + ", subject=" + subject + ", experience=" + experience + " years]";
+        return "Teacher  | Name: " + getName() + " | Age: " + getAge() + " | Email: " + getEmail()
+                + " | Subject: " + subject + " | Experience: " + experience + " yrs";
     }
 }

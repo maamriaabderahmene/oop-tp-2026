@@ -12,16 +12,16 @@ public class Main {
 
         // ── Pre-created persons ──────────────────────────────────────────────
         List<Person> persons = new ArrayList<>();
-        persons.add(new Person("Alice Martin",    28, "alice@ensta.dz"));
-        persons.add(new Person("Omar Benali",     34, "omar@ensta.dz"));
-        persons.add(new Person("Sarah Chouikh",   22, "sarah@ensta.dz"));
+        persons.add(new Person("Alice Martin", 28, "alice@ensta.dz"));
+        persons.add(new Person("Omar Benali", 34, "omar@ensta.dz"));
+        persons.add(new Person("Sarah Chouikh", 22, "sarah@ensta.dz"));
 
         // ── Pre-created teachers ─────────────────────────────────────────────
         List<Teacher> teachers = new ArrayList<>();
-        teachers.add(new Teacher("Dr. Karim Hadj",    45, "karim@ensta.dz",  "Mathematics",  18));
-        teachers.add(new Teacher("Dr. Lina Meziane",  38, "lina@ensta.dz",   "Physics",      12));
-        teachers.add(new Teacher("Prof. Yacine Bey",  52, "yacine@ensta.dz", "Algorithms",   25));
-        teachers.add(new Teacher("Dr. Rima Ould",     41, "rima@ensta.dz",   "Networking",    9));
+        teachers.add(new Teacher("Dr. Karim Hadj", 45, "karim@ensta.dz", "Mathematics", 18));
+        teachers.add(new Teacher("Dr. Lina Meziane", 38, "lina@ensta.dz", "Physics", 12));
+        teachers.add(new Teacher("Prof. Yacine Bey", 52, "yacine@ensta.dz", "Algorithms", 25));
+        teachers.add(new Teacher("Dr. Rima Ould", 41, "rima@ensta.dz", "Networking", 9));
 
         boolean running = true;
         while (running) {
@@ -29,15 +29,24 @@ public class Main {
             int choice = readInt("Your choice: ");
 
             switch (choice) {
-                case 1 -> showAllPersons(persons);
-                case 2 -> showAllTeachers(teachers);
-                case 3 -> editPerson(persons);
-                case 4 -> editTeacher(teachers);
-                case 0 -> {
+                case 1:
+                    showAllPersons(persons);
+                    break;
+                case 2:
+                    showAllTeachers(teachers);
+                    break;
+                case 3:
+                    editPerson(persons);
+                    break;
+                case 4:
+                    editTeacher(teachers);
+                    break;
+                case 0:
                     System.out.println("\nExiting. Goodbye!");
                     running = false;
-                }
-                default -> System.out.println("  [!] Invalid option. Try again.");
+                    break;
+                default:
+                    System.out.println("  [!] Invalid option. Try again.");
             }
         }
 
@@ -79,7 +88,8 @@ public class Main {
     static void editPerson(List<Person> persons) {
         showAllPersons(persons);
         int idx = readInt("\nEnter the index of the Person to edit (-1 to cancel): ");
-        if (idx == -1) return;
+        if (idx == -1)
+            return;
         if (idx < 0 || idx >= persons.size()) {
             System.out.println("  [!] Index out of range.");
             return;
@@ -87,16 +97,27 @@ public class Main {
 
         Person p = persons.get(idx);
         System.out.println("\nEditing: " + p);
-        System.out.println("  1. Name    (current: " + p.getName()  + ")");
-        System.out.println("  2. Age     (current: " + p.getAge()   + ")");
+        System.out.println("  1. Name    (current: " + p.getName() + ")");
+        System.out.println("  2. Age     (current: " + p.getAge() + ")");
         System.out.println("  3. Email   (current: " + p.getEmail() + ")");
         int field = readInt("  Choose field to edit: ");
 
         switch (field) {
-            case 1 -> { String name  = readString("  New name: ");  p.setName(name); }
-            case 2 -> { int    age   = readInt("  New age: ");       p.setAge(age);  }
-            case 3 -> { String email = readString("  New email: "); p.setEmail(email); }
-            default -> { System.out.println("  [!] Invalid field."); return; }
+            case 1:
+                String name = readString("  New name: ");
+                p.setName(name);
+                break;
+            case 2:
+                int age = readInt("  New age: ");
+                p.setAge(age);
+                break;
+            case 3:
+                String email = readString("  New email: ");
+                p.setEmail(email);
+                break;
+            default:
+                System.out.println("  [!] Invalid field.");
+                return;
         }
 
         System.out.println("  ✔ Updated: " + p);
@@ -105,7 +126,8 @@ public class Main {
     static void editTeacher(List<Teacher> teachers) {
         showAllTeachers(teachers);
         int idx = readInt("\nEnter the index of the Teacher to edit (-1 to cancel): ");
-        if (idx == -1) return;
+        if (idx == -1)
+            return;
         if (idx < 0 || idx >= teachers.size()) {
             System.out.println("  [!] Index out of range.");
             return;
@@ -113,20 +135,37 @@ public class Main {
 
         Teacher t = teachers.get(idx);
         System.out.println("\nEditing: " + t);
-        System.out.println("  1. Name        (current: " + t.getName()       + ")");
-        System.out.println("  2. Age         (current: " + t.getAge()        + ")");
-        System.out.println("  3. Email       (current: " + t.getEmail()      + ")");
-        System.out.println("  4. Subject     (current: " + t.getSubject()    + ")");
+        System.out.println("  1. Name        (current: " + t.getName() + ")");
+        System.out.println("  2. Age         (current: " + t.getAge() + ")");
+        System.out.println("  3. Email       (current: " + t.getEmail() + ")");
+        System.out.println("  4. Subject     (current: " + t.getSubject() + ")");
         System.out.println("  5. Experience  (current: " + t.getExperience() + " yrs)");
         int field = readInt("  Choose field to edit: ");
 
         switch (field) {
-            case 1 -> { String name  = readString("  New name: ");       t.setName(name);         }
-            case 2 -> { int    age   = readInt("  New age: ");            t.setAge(age);           }
-            case 3 -> { String email = readString("  New email: ");      t.setEmail(email);        }
-            case 4 -> { String subj  = readString("  New subject: ");    t.setSubject(subj);       }
-            case 5 -> { int    exp   = readInt("  New experience (yrs): "); t.setExperience(exp);  }
-            default -> { System.out.println("  [!] Invalid field."); return; }
+            case 1:
+                String name = readString("  New name: ");
+                t.setName(name);
+                break;
+            case 2:
+                int age = readInt("  New age: ");
+                t.setAge(age);
+                break;
+            case 3:
+                String email = readString("  New email: ");
+                t.setEmail(email);
+                break;
+            case 4:
+                String subj = readString("  New subject: ");
+                t.setSubject(subj);
+                break;
+            case 5:
+                int exp = readInt("  New experience (yrs): ");
+                t.setExperience(exp);
+                break;
+            default:
+                System.out.println("  [!] Invalid field.");
+                return;
         }
 
         System.out.println("  ✔ Updated: " + t);
