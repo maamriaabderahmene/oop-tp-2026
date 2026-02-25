@@ -1,7 +1,6 @@
 
 package tp2;
 
-// Exercise 6 – Maximum and Minimum of an Array
 import java.util.Scanner;
 
 public class ArrayMinMax {

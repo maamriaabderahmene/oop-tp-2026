@@ -1,4 +1,3 @@
-// Exercise 2 - Number Properties
 public class NumberProperties {
     int n;
 

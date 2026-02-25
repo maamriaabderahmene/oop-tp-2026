@@ -1,4 +1,3 @@
-// Exercise 1 - Simple Calculator
 public class Calculator {
     int a;
     int b;

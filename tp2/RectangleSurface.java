@@ -1,7 +1,6 @@
 
 package tp2;
 
-// Exercise 1 – Rectangle Surface
 import java.util.Scanner;
 
 public class RectangleSurface {

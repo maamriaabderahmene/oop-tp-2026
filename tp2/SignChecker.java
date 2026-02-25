@@ -1,7 +1,6 @@
 
 package tp2;
 
-// Exercise 3 – Positive or Negative Number
 import java.util.Scanner;
 
 public class SignChecker {

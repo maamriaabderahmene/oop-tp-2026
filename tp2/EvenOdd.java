@@ -1,7 +1,6 @@
 
 package tp2;
 
-// Exercise 2 – Even or Odd Number
 import java.util.Scanner;
 
 public class EvenOdd {

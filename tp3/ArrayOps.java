@@ -1,4 +1,3 @@
-// Exercise 3 - Array Operations
 public class ArrayOps {
     int[] array;
 

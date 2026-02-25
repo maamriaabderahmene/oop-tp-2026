@@ -1,7 +1,6 @@
 
 package tp2;
 
-// Exercise 4 – Factorial of a Number
 import java.util.Scanner;
 
 public class Factorial {

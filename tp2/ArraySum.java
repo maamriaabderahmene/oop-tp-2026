@@ -1,7 +1,6 @@
 
 package tp2;
 
-// Exercise 7 – Sum of Array Elements
 import java.util.Scanner;
 
 public class ArraySum {

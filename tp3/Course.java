@@ -1,4 +1,3 @@
-// Exercise 4 - Course Management
 public class Course {
     String courseName;
     String code;

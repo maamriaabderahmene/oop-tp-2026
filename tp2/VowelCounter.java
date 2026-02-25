@@ -1,7 +1,6 @@
 
 package tp2;
 
-// Exercise 8 – Count Vowels in a String
 import java.util.Scanner;
 
 public class VowelCounter {

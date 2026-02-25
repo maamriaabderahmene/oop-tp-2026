@@ -1,8 +1,8 @@
-package tp4.exo1.simple;
+package tp4.exo1.dev;
 
 public class Teacher extends Person {
     private String subject;
-    private int experience; // in years
+    private int experience;
 
     public Teacher(String name, int age, String email, String subject, int experience) {
         super(name, age, email);
@@ -36,7 +36,7 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "Teacher [name=" + getName() + ", age=" + getAge() + ", email=" + getEmail()
-                + ", subject=" + subject + ", experience=" + experience + " years]";
+        return "Teacher  | Name: " + getName() + " | Age: " + getAge() + " | Email: " + getEmail()
+                + " | Subject: " + subject + " | Experience: " + experience + " yrs";
     }
 }

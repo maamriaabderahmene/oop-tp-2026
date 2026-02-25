@@ -1,7 +1,6 @@
 
 package tp2;
 
-// Exercise 5 – Sum of Even Numbers up to N
 import java.util.Scanner;
 
 public class SumEvenNumbers {

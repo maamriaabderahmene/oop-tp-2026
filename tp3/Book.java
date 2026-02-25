@@ -1,4 +1,3 @@
-// Exercise 5 - Book Management
 public class Book {
     String title;
     String author;
