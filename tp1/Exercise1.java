@@ -1,6 +1,6 @@
 package tp1;
 
-// Exercise 1 – Display student information
+
 public class Exercise1 {
     public static void main(String[] args) {
         System.out.println("Name:  Maamr");
