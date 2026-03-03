@@ -49,11 +49,7 @@ public class Main {
                 case 0:
                     System.out.println("\nGoodbye!");
                     running = false;
-                    break;
-                default:
-                    System.out.println("  [!] Invalid option.");
-            }
-        }
+
         scanner.close();
     }
 
