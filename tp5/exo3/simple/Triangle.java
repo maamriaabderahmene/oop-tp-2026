@@ -12,12 +12,29 @@ public class Triangle extends Shape {
         this.sideC = sideC;
     }
 
-    public double getSideA() { return sideA; }
-    public void setSideA(double sideA) { this.sideA = sideA; }
-    public double getSideB() { return sideB; }
-    public void setSideB(double sideB) { this.sideB = sideB; }
-    public double getSideC() { return sideC; }
-    public void setSideC(double sideC) { this.sideC = sideC; }
+    public double getSideA() {
+        return sideA;
+    }
+
+    public void setSideA(double sideA) {
+        this.sideA = sideA;
+    }
+
+    public double getSideB() {
+        return sideB;
+    }
+
+    public void setSideB(double sideB) {
+        this.sideB = sideB;
+    }
+
+    public double getSideC() {
+        return sideC;
+    }
+
+    public void setSideC(double sideC) {
+        this.sideC = sideC;
+    }
 
     // Heron's formula
     public double calculateSurface() {
@@ -25,5 +42,7 @@ public class Triangle extends Shape {
         return Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
     }
 
-    public double calculatePerimeter() { return sideA + sideB + sideC; }
+    public double calculatePerimeter() {
+        return sideA + sideB + sideC;
+    }
 }

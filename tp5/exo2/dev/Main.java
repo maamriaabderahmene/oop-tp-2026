@@ -104,7 +104,8 @@ public class Main {
     static void processPayment() {
         showAll();
         int idx = readInt("Select method index (-1 to cancel): ");
-        if (idx == -1) return;
+        if (idx == -1)
+            return;
         if (idx < 0 || idx >= methods.size()) {
             System.out.println("[!] Invalid index.");
             return;
@@ -116,7 +117,8 @@ public class Main {
     static void processRefund() {
         showAll();
         int idx = readInt("Select method index (-1 to cancel): ");
-        if (idx == -1) return;
+        if (idx == -1)
+            return;
         if (idx < 0 || idx >= methods.size()) {
             System.out.println("[!] Invalid index.");
             return;

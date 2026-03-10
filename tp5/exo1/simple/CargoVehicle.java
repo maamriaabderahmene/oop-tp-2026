@@ -8,8 +8,13 @@ public class CargoVehicle extends Vehicle {
         this.maxLoadTons = maxLoadTons;
     }
 
-    public double getMaxLoadTons() { return maxLoadTons; }
-    public void setMaxLoadTons(double maxLoadTons) { this.maxLoadTons = maxLoadTons; }
+    public double getMaxLoadTons() {
+        return maxLoadTons;
+    }
+
+    public void setMaxLoadTons(double maxLoadTons) {
+        this.maxLoadTons = maxLoadTons;
+    }
 
     public void operate() {
         System.out.println(getBrand() + " " + getModel()

@@ -3,9 +3,9 @@ package tp5.exo2.simple;
 public class Main {
     public static void main(String[] args) {
         Payable[] methods = {
-            new CreditCardPayment("Ali Mansour", "1234567890123456"),
-            new PayPalPayment("sara.boudia@email.com"),
-            new BankTransferPayment("Karim Hadj", "0987654321")
+                new CreditCardPayment("Ali Mansour", "1234567890123456"),
+                new PayPalPayment("sara.boudia@email.com"),
+                new BankTransferPayment("Karim Hadj", "0987654321")
         };
 
         System.out.println("=== Registered Payment Methods ===");

@@ -89,7 +89,8 @@ public class Main {
     static void editVehicle() {
         showAll();
         int idx = readInt("Index to edit (-1 to cancel): ");
-        if (idx == -1) return;
+        if (idx == -1)
+            return;
         if (idx < 0 || idx >= fleet.size()) {
             System.out.println("[!] Invalid index.");
             return;
@@ -106,9 +107,15 @@ public class Main {
         }
         int field = readInt("Field: ");
         switch (field) {
-            case 1: v.setBrand(readString("New brand: ")); break;
-            case 2: v.setModel(readString("New model: ")); break;
-            case 3: v.setYear(readInt("New year: ")); break;
+            case 1:
+                v.setBrand(readString("New brand: "));
+                break;
+            case 2:
+                v.setModel(readString("New model: "));
+                break;
+            case 3:
+                v.setYear(readInt("New year: "));
+                break;
             case 4:
                 if (v instanceof PassengerVehicle)
                     ((PassengerVehicle) v).setSeatCapacity(readInt("New seat capacity: "));

@@ -8,8 +8,13 @@ public class PassengerVehicle extends Vehicle {
         this.seatCapacity = seatCapacity;
     }
 
-    public int getSeatCapacity() { return seatCapacity; }
-    public void setSeatCapacity(int seatCapacity) { this.seatCapacity = seatCapacity; }
+    public int getSeatCapacity() {
+        return seatCapacity;
+    }
+
+    public void setSeatCapacity(int seatCapacity) {
+        this.seatCapacity = seatCapacity;
+    }
 
     public void operate() {
         System.out.println(getBrand() + " " + getModel()

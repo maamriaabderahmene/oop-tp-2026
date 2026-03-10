@@ -9,8 +9,13 @@ public class BankTransferPayment implements Payable {
         this.maskedAccountNumber = "****" + accountNumber.substring(accountNumber.length() - 4);
     }
 
-    public String getAccountHolder() { return accountHolder; }
-    public String getMaskedAccountNumber() { return maskedAccountNumber; }
+    public String getAccountHolder() {
+        return accountHolder;
+    }
+
+    public String getMaskedAccountNumber() {
+        return maskedAccountNumber;
+    }
 
     public void pay(double amount) {
         System.out.println("[Bank Transfer] Transfer of " + String.format("%.2f", amount)
@@ -22,7 +27,9 @@ public class BankTransferPayment implements Payable {
                 + " DA to " + accountHolder + " (Account: " + maskedAccountNumber + ").");
     }
 
-    public String getPaymentMethod() { return "Bank Transfer"; }
+    public String getPaymentMethod() {
+        return "Bank Transfer";
+    }
 
     public String toString() {
         return "[Bank Transfer] " + accountHolder + " | Account: " + maskedAccountNumber;

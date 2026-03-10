@@ -13,10 +13,21 @@ public abstract class Vehicle {
         this.year = year;
     }
 
-    public String getId() { return id; }
-    public String getBrand() { return brand; }
-    public String getModel() { return model; }
-    public int getYear() { return year; }
+    public String getId() {
+        return id;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
 
     public abstract void operate();
 

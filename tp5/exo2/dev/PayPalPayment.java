@@ -7,7 +7,9 @@ public class PayPalPayment implements Payable {
         this.email = email;
     }
 
-    public String getEmail() { return email; }
+    public String getEmail() {
+        return email;
+    }
 
     public void pay(double amount) {
         System.out.println("[PayPal] Payment of " + String.format("%.2f", amount)
@@ -19,7 +21,9 @@ public class PayPalPayment implements Payable {
                 + " DA returned to account " + email + ".");
     }
 
-    public String getPaymentMethod() { return "PayPal"; }
+    public String getPaymentMethod() {
+        return "PayPal";
+    }
 
     public String toString() {
         return "[PayPal] " + email;

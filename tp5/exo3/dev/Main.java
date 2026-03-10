@@ -101,7 +101,8 @@ public class Main {
     static void editShape() {
         showAll();
         int idx = readInt("Index to edit (-1 to cancel): ");
-        if (idx == -1) return;
+        if (idx == -1)
+            return;
         if (idx < 0 || idx >= shapes.size()) {
             System.out.println("[!] Invalid index.");
             return;
@@ -114,19 +115,30 @@ public class Main {
             System.out.println("  1. Radius (" + circle.getRadius() + ")");
             System.out.println("  2. Color (" + circle.getColor() + ")");
             int f = readInt("Field: ");
-            if (f == 1) circle.setRadius(readDouble("New radius: "));
-            else if (f == 2) circle.setColor(readString("New color: "));
-            else { System.out.println("[!] Invalid field."); return; }
+            if (f == 1)
+                circle.setRadius(readDouble("New radius: "));
+            else if (f == 2)
+                circle.setColor(readString("New color: "));
+            else {
+                System.out.println("[!] Invalid field.");
+                return;
+            }
         } else if (s instanceof Rectangle) {
             Rectangle rect = (Rectangle) s;
             System.out.println("  1. Width (" + rect.getWidth() + ")");
             System.out.println("  2. Height (" + rect.getHeight() + ")");
             System.out.println("  3. Color (" + rect.getColor() + ")");
             int f = readInt("Field: ");
-            if (f == 1) rect.setWidth(readDouble("New width: "));
-            else if (f == 2) rect.setHeight(readDouble("New height: "));
-            else if (f == 3) rect.setColor(readString("New color: "));
-            else { System.out.println("[!] Invalid field."); return; }
+            if (f == 1)
+                rect.setWidth(readDouble("New width: "));
+            else if (f == 2)
+                rect.setHeight(readDouble("New height: "));
+            else if (f == 3)
+                rect.setColor(readString("New color: "));
+            else {
+                System.out.println("[!] Invalid field.");
+                return;
+            }
         } else if (s instanceof Triangle) {
             Triangle tri = (Triangle) s;
             System.out.println("  1. Side A (" + tri.getSideA() + ")");
@@ -134,29 +146,44 @@ public class Main {
             System.out.println("  3. Side C (" + tri.getSideC() + ")");
             System.out.println("  4. Color (" + tri.getColor() + ")");
             int f = readInt("Field: ");
-            if (f == 1) tri.setSideA(readDouble("New side A: "));
-            else if (f == 2) tri.setSideB(readDouble("New side B: "));
-            else if (f == 3) tri.setSideC(readDouble("New side C: "));
-            else if (f == 4) tri.setColor(readString("New color: "));
-            else { System.out.println("[!] Invalid field."); return; }
+            if (f == 1)
+                tri.setSideA(readDouble("New side A: "));
+            else if (f == 2)
+                tri.setSideB(readDouble("New side B: "));
+            else if (f == 3)
+                tri.setSideC(readDouble("New side C: "));
+            else if (f == 4)
+                tri.setColor(readString("New color: "));
+            else {
+                System.out.println("[!] Invalid field.");
+                return;
+            }
         }
         System.out.println("Updated: " + s);
     }
 
     static void showLargestArea() {
-        if (shapes.isEmpty()) { System.out.println("  No shapes."); return; }
+        if (shapes.isEmpty()) {
+            System.out.println("  No shapes.");
+            return;
+        }
         Shape max = shapes.get(0);
         for (Shape s : shapes) {
-            if (s.calculateSurface() > max.calculateSurface()) max = s;
+            if (s.calculateSurface() > max.calculateSurface())
+                max = s;
         }
         System.out.println("Largest area: " + max);
     }
 
     static void showLargestPerimeter() {
-        if (shapes.isEmpty()) { System.out.println("  No shapes."); return; }
+        if (shapes.isEmpty()) {
+            System.out.println("  No shapes.");
+            return;
+        }
         Shape max = shapes.get(0);
         for (Shape s : shapes) {
-            if (s.calculatePerimeter() > max.calculatePerimeter()) max = s;
+            if (s.calculatePerimeter() > max.calculatePerimeter())
+                max = s;
         }
         System.out.println("Largest perimeter: " + max);
     }

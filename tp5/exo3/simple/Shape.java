@@ -7,9 +7,12 @@ public abstract class Shape {
         this.name = name;
     }
 
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 
     public abstract double calculateSurface();
+
     public abstract double calculatePerimeter();
 
     public String toString() {

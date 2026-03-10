@@ -10,11 +10,27 @@ public class Rectangle extends Shape {
         this.height = height;
     }
 
-    public double getWidth() { return width; }
-    public void setWidth(double width) { this.width = width; }
-    public double getHeight() { return height; }
-    public void setHeight(double height) { this.height = height; }
+    public double getWidth() {
+        return width;
+    }
 
-    public double calculateSurface() { return width * height; }
-    public double calculatePerimeter() { return 2 * (width + height); }
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public double calculateSurface() {
+        return width * height;
+    }
+
+    public double calculatePerimeter() {
+        return 2 * (width + height);
+    }
 }
