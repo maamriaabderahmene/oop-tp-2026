@@ -28,8 +28,13 @@ public class EscapeRoom {
             this.timeLimitMinutes = timeLimitMinutes;
         }
 
-        public String getDifficulty() { return difficulty; }
-        public int getTimeLimitMinutes() { return timeLimitMinutes; }
+        public String getDifficulty() {
+            return difficulty;
+        }
+
+        public int getTimeLimitMinutes() {
+            return timeLimitMinutes;
+        }
 
         public String toString() {
             return "Config[difficulty=" + difficulty + ", time=" + timeLimitMinutes + " min]";
@@ -64,7 +69,9 @@ public class EscapeRoom {
                     + "' solved! +" + points + " pts | Total: " + totalScore);
         }
 
-        public boolean isSolved() { return solved; }
+        public boolean isSolved() {
+            return solved;
+        }
 
         public String toString() {
             return "Puzzle['" + title + "', " + points + " pts, "
@@ -81,7 +88,9 @@ public class EscapeRoom {
         class GameRule {
             private String rule;
 
-            GameRule(String rule) { this.rule = rule; }
+            GameRule(String rule) {
+                this.rule = rule;
+            }
 
             void enforce() {
                 System.out.println("  [" + name + "] Rule applied: \"" + rule + "\"");
@@ -109,10 +118,21 @@ public class EscapeRoom {
         alarm.run();
     }
 
-    public String getName() { return name; }
-    public int getMaxPlayers() { return maxPlayers; }
-    public boolean isActive() { return active; }
-    public int getTotalScore() { return totalScore; }
+    public String getName() {
+        return name;
+    }
+
+    public int getMaxPlayers() {
+        return maxPlayers;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public int getTotalScore() {
+        return totalScore;
+    }
 
     public String toString() {
         return "EscapeRoom['" + name + "', maxPlayers=" + maxPlayers

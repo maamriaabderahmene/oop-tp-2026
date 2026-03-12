@@ -35,12 +35,29 @@ public class EscapeRoom {
             this.maxHints = maxHints;
         }
 
-        public String getDifficulty() { return difficulty; }
-        public void setDifficulty(String difficulty) { this.difficulty = difficulty; }
-        public int getTimeLimitMinutes() { return timeLimitMinutes; }
-        public void setTimeLimitMinutes(int t) { this.timeLimitMinutes = t; }
-        public int getMaxHints() { return maxHints; }
-        public void setMaxHints(int h) { this.maxHints = h; }
+        public String getDifficulty() {
+            return difficulty;
+        }
+
+        public void setDifficulty(String difficulty) {
+            this.difficulty = difficulty;
+        }
+
+        public int getTimeLimitMinutes() {
+            return timeLimitMinutes;
+        }
+
+        public void setTimeLimitMinutes(int t) {
+            this.timeLimitMinutes = t;
+        }
+
+        public int getMaxHints() {
+            return maxHints;
+        }
+
+        public void setMaxHints(int h) {
+            this.maxHints = h;
+        }
 
         public String toString() {
             return "Config[difficulty=" + difficulty
@@ -87,10 +104,21 @@ public class EscapeRoom {
                     + "' — hint #" + hintsUsed + " used (-10 pts penalty).");
         }
 
-        public boolean isSolved() { return solved; }
-        public String getTitle() { return title; }
-        public int getPoints() { return points; }
-        public int getHintsUsed() { return hintsUsed; }
+        public boolean isSolved() {
+            return solved;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public int getPoints() {
+            return points;
+        }
+
+        public int getHintsUsed() {
+            return hintsUsed;
+        }
 
         public String toString() {
             return "Puzzle['" + title + "', " + points + " pts"
@@ -144,16 +172,35 @@ public class EscapeRoom {
         alarm.run();
     }
 
-    public void addPuzzle(Puzzle p) { puzzles.add(p); }
-    public List<Puzzle> getPuzzles() { return puzzles; }
-    public String getName() { return name; }
-    public int getMaxPlayers() { return maxPlayers; }
-    public boolean isActive() { return active; }
-    public int getTotalScore() { return totalScore; }
+    public void addPuzzle(Puzzle p) {
+        puzzles.add(p);
+    }
+
+    public List<Puzzle> getPuzzles() {
+        return puzzles;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getMaxPlayers() {
+        return maxPlayers;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public int getTotalScore() {
+        return totalScore;
+    }
 
     public int countSolved() {
         int count = 0;
-        for (Puzzle p : puzzles) if (p.isSolved()) count++;
+        for (Puzzle p : puzzles)
+            if (p.isSolved())
+                count++;
         return count;
     }
 

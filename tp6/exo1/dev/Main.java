@@ -16,9 +16,9 @@ public class Main {
         room = new EscapeRoom("The Lost Temple", 4);
 
         // --- Inner class: add puzzles linked to the room ---
-        EscapeRoom.Puzzle p1 = room.new Puzzle("Hidden Code",    100);
-        EscapeRoom.Puzzle p2 = room.new Puzzle("Mirror Maze",    200);
-        EscapeRoom.Puzzle p3 = room.new Puzzle("Locked Chest",   150);
+        EscapeRoom.Puzzle p1 = room.new Puzzle("Hidden Code", 100);
+        EscapeRoom.Puzzle p2 = room.new Puzzle("Mirror Maze", 200);
+        EscapeRoom.Puzzle p3 = room.new Puzzle("Locked Chest", 150);
         EscapeRoom.Puzzle p4 = room.new Puzzle("Ancient Cipher", 250);
         room.addPuzzle(p1);
         room.addPuzzle(p2);
@@ -26,17 +26,25 @@ public class Main {
         room.addPuzzle(p4);
 
         // --- Local class: apply session rules ---
-        room.applyRules(new String[]{"No outside help", "Time limit enforced", "Hints cost 10 pts"});
+        room.applyRules(new String[] { "No outside help", "Time limit enforced", "Hints cost 10 pts" });
 
         boolean running = true;
         while (running) {
             printMenu();
             int choice = readInt("Choice: ");
             switch (choice) {
-                case 1: showRoom();   break;
-                case 2: showPuzzles(); break;
-                case 3: solvePuzzle(); break;
-                case 4: useHint();    break;
+                case 1:
+                    showRoom();
+                    break;
+                case 2:
+                    showPuzzles();
+                    break;
+                case 3:
+                    solvePuzzle();
+                    break;
+                case 4:
+                    useHint();
+                    break;
                 case 5:
                     // Anonymous class: one-time emergency alarm
                     room.triggerAlarm();
@@ -82,7 +90,8 @@ public class Main {
     static void solvePuzzle() {
         showPuzzles();
         int idx = readInt("Puzzle index (-1 to cancel): ");
-        if (idx == -1) return;
+        if (idx == -1)
+            return;
         if (idx < 0 || idx >= room.getPuzzles().size()) {
             System.out.println("[!] Invalid index.");
             return;
@@ -93,7 +102,8 @@ public class Main {
     static void useHint() {
         showPuzzles();
         int idx = readInt("Puzzle index (-1 to cancel): ");
-        if (idx == -1) return;
+        if (idx == -1)
+            return;
         if (idx < 0 || idx >= room.getPuzzles().size()) {
             System.out.println("[!] Invalid index.");
             return;

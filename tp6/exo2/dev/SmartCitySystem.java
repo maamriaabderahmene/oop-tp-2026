@@ -47,7 +47,9 @@ public class SmartCitySystem {
             System.out.println("  [Power] " + cityName + " power grid restored.");
         }
 
-        boolean isOn() { return powerOn; }
+        boolean isOn() {
+            return powerOn;
+        }
     }
 
     // =========================================================
@@ -77,7 +79,9 @@ public class SmartCitySystem {
         class TemporarySensor { // no 'static' — local classes cannot be static
             private String zone;
 
-            TemporarySensor(String zone) { this.zone = zone; }
+            TemporarySensor(String zone) {
+                this.zone = zone;
+            }
 
             void scan() {
                 System.out.println("  [Sensor] Scanning zone '" + zone

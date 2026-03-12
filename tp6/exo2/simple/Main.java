@@ -9,8 +9,7 @@ public class Main {
         unit.shutdown();
 
         // FIX 6: use fully qualified name; pass cityName to constructor.
-        SmartCitySystem.CityDashboard dashboard =
-                new SmartCitySystem.CityDashboard(system.cityName);
+        SmartCitySystem.CityDashboard dashboard = new SmartCitySystem.CityDashboard(system.cityName);
         dashboard.showStatus();
 
         system.operateSystem();

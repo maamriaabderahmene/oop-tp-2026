@@ -6,18 +6,18 @@ public class Main {
 
     static Scanner scanner = new Scanner(System.in);
     static SmartCitySystem system;
-    static SmartCitySystem.PowerUnit    power;
+    static SmartCitySystem.PowerUnit power;
     static SmartCitySystem.TrafficController traffic;
     static SmartCitySystem.CityDashboard dashboard;
 
     public static void main(String[] args) {
-        system  = new SmartCitySystem("NeoCity", 12);
+        system = new SmartCitySystem("NeoCity", 12);
 
         // Static nested class: no outer instance needed
         dashboard = new SmartCitySystem.CityDashboard(system.cityName);
 
         // Non-static inner classes: require outer instance
-        power   = system.new PowerUnit();
+        power = system.new PowerUnit();
         traffic = system.new TrafficController();
 
         System.out.println("=== Smart City Control System ===");
@@ -28,15 +28,33 @@ public class Main {
             printMenu();
             int choice = readInt("Choice: ");
             switch (choice) {
-                case 1: dashboard.showStatus();     break;
-                case 2: dashboard.showHelp();       break;
-                case 3: power.shutdown();           break;
-                case 4: power.restore();            break;
-                case 5: traffic.regulate();         break;
-                case 6: traffic.addLight();         break;
-                case 7: system.operateSystem();     break;
-                case 8: system.backupCommand.execute(); break;
-                case 9: System.out.println("  " + system); break;
+                case 1:
+                    dashboard.showStatus();
+                    break;
+                case 2:
+                    dashboard.showHelp();
+                    break;
+                case 3:
+                    power.shutdown();
+                    break;
+                case 4:
+                    power.restore();
+                    break;
+                case 5:
+                    traffic.regulate();
+                    break;
+                case 6:
+                    traffic.addLight();
+                    break;
+                case 7:
+                    system.operateSystem();
+                    break;
+                case 8:
+                    system.backupCommand.execute();
+                    break;
+                case 9:
+                    System.out.println("  " + system);
+                    break;
                 case 0:
                     System.out.println("System offline. Goodbye.");
                     running = false;
